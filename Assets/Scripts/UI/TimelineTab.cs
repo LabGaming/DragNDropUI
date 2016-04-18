@@ -32,6 +32,10 @@ public class TimelineTab : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             AnchorSticker(sticker, sticker.slotIndex);
             return;
         }
+        else if(sticker.parentTab != null)
+        {
+            sticker.parentTab.RemoveSticker(sticker);
+        }
 
         int freeSlot = -1;
 
