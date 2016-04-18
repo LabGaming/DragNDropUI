@@ -86,8 +86,10 @@ public class TimelineTabManager : MonoBehaviour {
         }
         else
         {
-            
-            sticker.parentTab.RemoveSticker(sticker);
+            if (sticker.parentTab != null)
+            {
+                sticker.parentTab.RemoveSticker(sticker);
+            }
             Destroy(sticker.gameObject);
         }
     }
