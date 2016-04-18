@@ -59,7 +59,7 @@ public class TimelineTabManager : MonoBehaviour {
             }
             else if(_tabs[i].transform.localPosition.x > currentTab.originalPosition.x)
             {
-                _tabs[i].transform.DOLocalMoveX(_tabs[i].originalPosition.x + 25, 1f);
+                _tabs[i].transform.DOLocalMoveX(_tabs[i].originalPosition.x + (25 * (_tabs.Length - i)), 1f);
             }
         }
 
@@ -74,7 +74,6 @@ public class TimelineTabManager : MonoBehaviour {
         for (int i = 0; i < _tabs.Length; i++)
         {
             _tabs[i].transform.DOLocalMoveX(_tabs[i].originalPosition.x, 1f);
-            //_tabs[i].transform.localPosition = _tabs[i].originalPosition;
         }
     }
 
